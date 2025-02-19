@@ -1,0 +1,28 @@
+[package]
+name = "generate-peer-registry-args"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+url = { version = "2.5.2" }
+libp2p = { version = "0.54", features = [
+  "request-response",
+  "cbor",
+  "serde",
+  "kad",
+  "gossipsub",
+  "tokio",
+  "noise",
+  "macros",
+  "tcp",
+  "yamux",
+  "quic",
+  "secp256k1",
+  "relay",
+] }
+hex = "0.4.3"
+secp256k1 = { version = "0.29.0", features = ["rand"] }
+rsa = { version = "0.9.6", features = ["serde"] }
+rand_chacha = "0.3.1"
+clap = { version = "4.5.4", features = ["derive", "cargo"] }
+dotenv = "0.15.0"
