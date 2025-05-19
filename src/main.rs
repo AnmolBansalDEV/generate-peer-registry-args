@@ -16,7 +16,7 @@ fn validate_url(url: &str) -> bool {
 }
 
 pub fn fetch_secp256k1_keypair() -> Keypair {
-    let seed = env::var("RSA_SEED").expect("RSA_SEED must be set");
+    let seed = env::var("SECP256K1_SEED").expect("SECP256K1_SEED must be set");
     let seed_bytes = hex::decode(seed.clone()).unwrap();
     let seed_bytes: [u8; 32] = seed_bytes.try_into().expect("SECP256K1_SEED must be 32 bytes");
     let mut rng = ChaCha8Rng::from_seed(seed_bytes);
